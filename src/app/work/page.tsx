@@ -5,7 +5,7 @@ export default function WorkPage() {
     <main className="flex min-h-screen flex-col items-center pt-32 pb-24 px-6 md:px-12 w-full max-w-7xl mx-auto">
       <div className="w-full mb-16">
         <h1 className="text-5xl md:text-7xl font-medium tracking-tighter mb-4">
-          Selected <span className="text-white/40">Works</span>
+          My <span className="text-white/40">Projects</span>
         </h1>
         <p className="text-white/60 text-lg max-w-2xl font-light">
           A collection of my recent projects, featuring scalable backends, interactive frontends, and AI integrations.
@@ -14,42 +14,40 @@ export default function WorkPage() {
 
       <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         <ProjectCard
-          title="Aero Landing Page"
-          description="A comprehensive AI chatbot platform. This project focuses on the design and development of a user-friendly and visually appealing landing page."
-          imgSrc="https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2832&auto=format&fit=crop"
-          link="#"
+          title="Edulink"
+          description="Academic Study Collaboration Platform designed to enhance peer learning and connect students through structured resources."
+          imgSrc="/projects/edulink.png"
+          link="https://github.com/Hitesh-09/Edulink"
         />
         <ProjectCard
-          title="Dreamland App Concept"
-          description="A dreamy mobile app prototype designed for mindfulness and relaxation, featuring calming animations and a serene user interface."
-          imgSrc="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2940&auto=format&fit=crop"
-          link="#"
-          linkText="Explore Concept"
+          title="ParamSetu"
+          description="Parametric Insurance Platform for Delivery Riders ensuring instant, data-driven payouts based on external triggers."
+          imgSrc="/projects/paramsetu.png"
+          link="https://github.com/Hitesh-09/ParamSetu"
         />
         <ProjectCard
-          title="Quantum Analytics Dashboard"
-          description="A data visualization tool for quantum computing experiments, providing real-time insights and complex data analysis."
+          title="Retinal Disease Classification"
+          description="Advanced deep learning pipeline to detect and classify various retinal diseases from medical imaging scans."
+          imgSrc="/projects/retinal.png"
+          link="https://github.com/Hitesh-09/retinal-disease-classification"
+        />
+        <ProjectCard
+          title="Agentguard"
+          description="A robust security and monitoring layer designed specifically for LLMs and autonomous AI agents."
           imgSrc="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2834&auto=format&fit=crop"
-          link="#"
+          link="https://github.com/Hitesh-09/Agentguard"
         />
         <ProjectCard
-          title="Nebula API Gateway"
-          description="A scalable, high-performance API gateway built in Go to handle millions of concurrent connections for microservices architectures."
-          imgSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop"
-          link="#"
+          title="KrishiMitra"
+          description="Scalable backend platform for managing farmer data with REST APIs, built for agri-tech applications."
+          imgSrc="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2940&auto=format&fit=crop"
+          link="https://github.com/Hitesh-09/KrishiMitra"
         />
         <ProjectCard
-          title="Fintech Mobile Wallet"
-          description="A cross-platform React Native application providing secure cryptographic key generation and seamless digital payments."
-          imgSrc="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2940&auto=format&fit=crop"
-          link="#"
-        />
-        <ProjectCard
-          title="Neural Search Engine"
-          description="An enterprise search tool powered by vector embeddings, optimizing document retrieval across multiple internal knowledge bases."
-          imgSrc="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2940&auto=format&fit=crop"
-          link="#"
-          linkText="View Demo"
+          title="TrainMate"
+          description="A smart mobile application for searching train schedules, seat availability, and optimizing travel options."
+          imgSrc="/projects/trainmate.png"
+          link="https://github.com/Hitesh-09/TrainMate"
         />
       </div>
     </main>

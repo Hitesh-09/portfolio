@@ -56,7 +56,7 @@ export function WorkSection() {
           transition={{ duration: 0.6 }}
           className="text-white/50 font-mono text-sm uppercase tracking-widest mb-4"
         >
-          Selected Works
+          My Projects
         </motion.p>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

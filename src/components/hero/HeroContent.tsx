@@ -67,7 +67,9 @@ export function HeroContent() {
           </Link>
           
           <Link
-            href="#"
+            href="https://github.com/Hitesh-09"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-3 bg-black/20 hover:bg-white/10 text-white border border-white/10 px-8 py-4 rounded-full transition-all duration-300"
           >
             <svg

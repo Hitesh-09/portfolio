@@ -225,7 +225,7 @@ export function LetsWorkTogether() {
           <p className="max-w-md text-sm leading-relaxed text-white/60">
             Have a project in mind? I'd love to hear about it. Let's create something exceptional together.
           </p>
-          <span className="text-xs tracking-widest uppercase text-white/40">hello@example.com</span>
+          <span className="text-xs tracking-widest text-white/40">hiteishshimpi@gmail.com</span>
         </div>
       </div>
     </section>
