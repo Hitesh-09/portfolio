@@ -1,11 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { ArrowRight, Code2, Cpu, Globe2 } from "lucide-react"
 import { GitHubCalendar } from "react-github-calendar"
 
-const FADE_UP_ANIMATION_VARIANTS = {
+const FADE_UP_ANIMATION_VARIANTS: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 20 } },
 }
