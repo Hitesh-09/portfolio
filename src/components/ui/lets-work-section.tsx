@@ -12,6 +12,8 @@ export function LetsWorkTogether() {
   const [isClicked, setIsClicked] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
@@ -22,9 +24,37 @@ export function LetsWorkTogether() {
     }, 500)
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "c6b82404-6489-49ac-ac22-367b7fec5e12";
+
+    formData.append("access_key", accessKey);
+    formData.append("subject", `New message from ${formData.get("name") || "Portfolio Visitor"}`);
+    formData.append("from_name", "Portfolio Contact Form");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+      } else {
+        setError(data.message || "Failed to send message. Please try again.");
+      }
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -73,6 +103,7 @@ export function LetsWorkTogether() {
                   </label>
                   <Input
                     id="c16-name"
+                    name="name"
                     placeholder="Ada Lovelace"
                     required
                     className="h-11"
@@ -88,6 +119,7 @@ export function LetsWorkTogether() {
                   </label>
                   <Input
                     id="c16-email"
+                    name="email"
                     type="email"
                     placeholder="you@company.com"
                     required
@@ -104,6 +136,7 @@ export function LetsWorkTogether() {
                   </label>
                   <textarea
                     id="c16-msg"
+                    name="message"
                     rows={5}
                     required
                     placeholder="How can we help?"
@@ -111,12 +144,19 @@ export function LetsWorkTogether() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-400 bg-red-950/40 border border-red-800/50 p-2.5 rounded-lg">
+                    {error}
+                  </p>
+                )}
+
                 <Button
                   type="submit"
                   size="lg"
-                  className="mt-1 w-full rounded-full"
+                  disabled={loading}
+                  className="mt-1 w-full rounded-full cursor-pointer disabled:opacity-50"
                 >
-                  Send message
+                  {loading ? "Sending..." : "Send message"}
                   <ArrowRight className="size-4 ml-2" />
                 </Button>
               </form>
@@ -225,7 +265,9 @@ export function LetsWorkTogether() {
           <p className="max-w-md text-sm leading-relaxed text-white/60">
             Have a project in mind? I'd love to hear about it. Let's create something exceptional together.
           </p>
-          <span className="text-xs tracking-widest text-white/40">hiteishshimpi@gmail.com</span>
+          <a href="mailto:hiteishshimpi@gmail.com" className="text-xs tracking-widest text-white/40 hover:text-white transition-colors">
+            hiteishshimpi@gmail.com
+          </a>
         </div>
       </div>
     </section>
