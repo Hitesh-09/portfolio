@@ -262,12 +262,17 @@ export function LetsWorkTogether() {
             pointerEvents: isClicked ? "none" : "auto",
           }}
         >
-          <p className="max-w-md text-sm leading-relaxed text-white/60">
-            Have a project in mind? I'd love to hear about it. Let's create something exceptional together.
+          <p className="max-w-lg text-base sm:text-lg leading-relaxed text-white/70">
+            Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something exceptional together.
           </p>
-          <a href="mailto:hiteishshimpi@gmail.com" className="text-xs tracking-widest text-white/40 hover:text-white transition-colors">
-            hiteishshimpi@gmail.com
-          </a>
+          <div className="flex flex-col items-center gap-2 mt-1">
+            <a href="mailto:hiteishshimpi@gmail.com" className="text-sm sm:text-base tracking-widest text-white/60 hover:text-white transition-colors">
+              hiteishshimpi@gmail.com
+            </a>
+            <a href="tel:+918055181811" className="text-sm sm:text-base tracking-widest text-white/60 hover:text-white transition-colors">
+              +91 80551 81811
+            </a>
+          </div>
         </div>
       </div>
     </section>
