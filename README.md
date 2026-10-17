@@ -1,4 +1,4 @@
-# 🚀 Hitesh's Portfolio — Cinematic & Interactive Developer Experience
+# 🚀 Hitesh's Portfolio
 
 <div align="center">
 
